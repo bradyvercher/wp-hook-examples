@@ -33,7 +33,7 @@ function hookex_die() {
  * @link http://codex.wordpress.org/Function_Reference/remove_action
  */
 include( dirname( __FILE__ ) . '/examples/procedural.php' );
-include( dirname( __FILE__ ) . '/examples/object.php' );
+include( dirname( __FILE__ ) . '/examples/instantiated-object.php' );
 include( dirname( __FILE__ ) . '/examples/singleton.php' );
 include( dirname( __FILE__ ) . '/examples/static-class.php' );
 include( dirname( __FILE__ ) . '/examples/mixed-class.php' );
