@@ -23,6 +23,12 @@ remove_action( 'init', array( 'Hookex_Static_Class', 'init1' ) );
 remove_action( 'init', array( 'Hookex_Static_Class', 'init2' ) );
 
 // Mixed class
+// removes examples/mixed-class.php
 global $hookex_mixed;
 remove_action( 'init', array( $hookex_mixed, 'init1' ) );
 remove_action( 'init', array( 'Hookex_Mixed_Class', 'init2' ) );
+
+/**
+ * The examples in examples/closure.php and examples/inaccessible-object.php
+ * cannot be unhooked. :(
+ */
