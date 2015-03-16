@@ -17,5 +17,5 @@ class Hookex_Object {
 // Plugins are generally loaded in the global scope, however, in some cases they
 // may be loaded within a particular function or method's scope, so it's a good
 // idea to explicitly assign the main plugin object instance to a global
-// variable if you want it to be accessible elsehwere.
+// variable if you want it to be accessible elsewhere.
 $GLOBALS['hookex_object'] = new Hookex_Object();
