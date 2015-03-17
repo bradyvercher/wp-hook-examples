@@ -41,5 +41,5 @@ include( dirname( __FILE__ ) . '/examples/mixed-class.php' );
 /**
  * Examples of hooks that can't be easily manipulated because they're inaccessible.
  */
-// include( dirname( __FILE__ ) . '/examples/closure.php' );
-// include( dirname( __FILE__ ) . '/examples/inaccessible-object.php' );
+// include( dirname( __FILE__ ) . '/examples/inaccessible/closure.php' );
+// include( dirname( __FILE__ ) . '/examples/inaccessible/inaccessible-object.php' );
