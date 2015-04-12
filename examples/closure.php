@@ -7,6 +7,13 @@
  *
  * Note the disadvantages to using closures in this article:
  * @link http://wprealm.com/blog/using-php-closures-in-wordpress/
+ *
+ * Technically, it IS possible to remove a closure hook callback,
+ * but if more than one closure act on the same filter at the same
+ * priority you have to make a choice, remove them all, or remove
+ * only one (without knowing exactly which)
+ *
+ * @link http://wordpress.stackexchange.com/a/140989
  */
 add_action( 'init', function() {
 	hookex_die();
