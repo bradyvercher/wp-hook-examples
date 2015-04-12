@@ -39,6 +39,54 @@ remove_action( 'init', array( $hookex_mixed, 'init1' ) );
 remove_action( 'init', array( 'Hookex_Mixed_Class', 'init2' ) );
 
 /*
- * The examples in examples/closure.php and examples/inaccessible-object.php
- * cannot be unhooked. :(
+ * The example in examples/inaccessible-object.php takes a bit more effort...
+ * To accomplish it, we'll create a helper function:
+ */
+
+/**
+ * Remove an anonymous object filter.
+ *
+ * @link http://wordpress.stackexchange.com/a/57088 WordPress Stackexchange answer
+ *
+ * @param string $tag      Hook name.
+ * @param string $class    Class name
+ * @param string $method   Method name
+ * @param int    $priority Hook priority
+ */
+function remove_anonymous_object_filter( $tag, $class, $method, $priority = 10 ) {
+	global $wp_filter;
+
+	if ( empty( $wp_filter[ $tag ] ) ) {
+		return;
+	}
+
+	// Clone array so original array pointer is preserved
+	$filters = $wp_filter[ $tag ];
+
+	foreach ( $filters as $_priority => $filter ) {
+		if ( $_priority !== $priority ) {
+			continue;
+		}
+
+		foreach ( $filter as $identifier => $function ) {
+			if (
+				is_array( $function )
+				&& is_array( $function['function'] )
+				&& is_a( $function['function'][0], $class )
+				&& $method === $function['function'][1]
+			) {
+				remove_filter( $tag, array( $function['function'][0], $method ), $_priority );
+			}
+		}
+	}
+}
+
+/*
+ * Now we'll remove the filter added by the inaccessible object
+ * removes examples/inaccessible-object.php
+ */
+remove_anonymous_object_filter( 'init', 'Hookex_Inaccessible_Object', 'init' );
+
+/*
+ * The example in examples/closure.php cannot be __reliably__ unhooked. :(
  */
