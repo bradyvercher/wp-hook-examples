@@ -20,8 +20,10 @@ class Hookex_Static_Class {
 	}
 }
 
-// Using array syntax with the class name to attach a method.
-// An instance of a static class isn't needed to add or remove hooks, just the name.
+/*
+ * Using array syntax with the class name to attach a method.
+ * An instance of a static class isn't needed to add or remove hooks, just the name.
+ */
 add_action( 'init', array( 'Hookex_Static_Class', 'init1' ) );
 
 // An alternative for setting up a group of hooks.
