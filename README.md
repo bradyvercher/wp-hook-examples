@@ -2,7 +2,7 @@
 
 **Do not activate on a live site!**
 
-It's 2014 and somehow, somewhere something is preventing your site from displaying. You've identified the offending code as none other than a function calling the dreaded `hookex_die()`. You can't deactivate the plugin and can't hack its code lest your fix be wiped out in a future plugin update. The only feasible option to save your site is to wield the [Plugin Hook API](http://codex.wordpress.org/Plugin_API/Hooks)...
+It's ~~2014~~ 215 and somehow, somewhere something is preventing your site from displaying. You've identified the offending code as none other than a function calling the dreaded `hookex_die()`. You can't deactivate the plugin and can't hack its code lest your fix be wiped out in a future plugin update. The only feasible option to save your site is to wield the [Plugin Hook API](http://codex.wordpress.org/Plugin_API/Hooks)...
 
 Cheesiness aside, this plugin can be used as an educational exercise or reference for removing actions that have been attached using various common patterns in WordPress plugins.
 
