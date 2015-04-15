@@ -26,6 +26,8 @@ class Hookex_Singleton {
 	}
 }
 
-// This can be called anywhere to retrieve the instance of the object without
-// worrying about hooks being attached multiple times.
+/*
+ * This can be called anywhere to retrieve the instance of the object without
+ * worrying about hooks being attached multiple times.
+ */
 Hookex_Singleton::get_instance();
