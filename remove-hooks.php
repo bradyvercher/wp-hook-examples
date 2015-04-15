@@ -53,7 +53,7 @@ remove_action( 'init', array( 'Hookex_Mixed_Class', 'init2' ) );
  * @param string $method   Method name
  * @param int    $priority Hook priority
  */
-function remove_anonymous_object_filter( $tag, $class, $method, $priority = 10 ) {
+function hookex_remove_anonymous_object_filter( $tag, $class, $method, $priority = 10 ) {
 	global $wp_filter;
 
 	if ( empty( $wp_filter[ $tag ] ) ) {
@@ -85,7 +85,7 @@ function remove_anonymous_object_filter( $tag, $class, $method, $priority = 10 )
  * Now we'll remove the filter added by the inaccessible object
  * removes examples/inaccessible-object.php
  */
-remove_anonymous_object_filter( 'init', 'Hookex_Inaccessible_Object', 'init' );
+hookex_remove_anonymous_object_filter( 'init', 'Hookex_Inaccessible_Object', 'init' );
 
 /*
  * The example in examples/closure.php cannot be __reliably__ unhooked. :(
